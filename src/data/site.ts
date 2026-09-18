@@ -3,7 +3,7 @@ export const profile = {
   title: 'Senior AI Engineer · Applied AI Systems',
   eyebrow: 'AI Systems · Computer Vision · Quantitative ML · Research',
   intro:
-    'Senior AI engineer and technical lead with 6+ years building applied AI across agents and knowledge systems, computer vision and video, quantitative ML, speech, edge inference, and production software. I work end to end: from research and data contracts to application architecture, deployment, evaluation, reliability, and stakeholder acceptance.',
+    'Senior AI engineer and technical lead with 8+ years of professional AI/software engineering experience spanning agents and knowledge systems, computer vision and video, quantitative ML, speech, edge inference, and production software. I work end to end: from research and data contracts to application architecture, deployment, evaluation, reliability, and stakeholder acceptance.',
   email: 'tqsang97@gmail.com',
   github: 'https://github.com/sangtrx',
   linkedin: 'https://linkedin.com/in/tqsang',
@@ -13,7 +13,7 @@ export const profile = {
 
 export const credibility = [
   { label: 'Current role', value: 'Head of Artificial Intelligence' },
-  { label: 'Applied AI experience', value: '6+ years' },
+  { label: 'Professional AI / software experience', value: '8+ years' },
   { label: 'Graduate degree', value: 'MS Computer Engineering · 4.0/4.0' },
   { label: 'Research', value: 'IJCV · AAAI Oral · IEEE JBHI · Poultry Science' },
 ];
