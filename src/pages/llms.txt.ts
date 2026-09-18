@@ -9,7 +9,7 @@ export const GET: APIRoute = ({ site }) => {
   const url = (path: string) => new URL(withBase(path), root).href;
   const text = `# Sang Truong (sangtrx)
 
-> ${publicIdentity.role} based in ${publicIdentity.location}. 6+ years across applied AI/agent systems, computer vision and video intelligence, quantitative ML, multimodal research, speech, edge inference, distributed backends, and production delivery. Master of Science in Computer Engineering, University of Arkansas, GPA 4.0/4.0.
+> ${publicIdentity.role} based in ${publicIdentity.location}. 8+ years of professional AI/software engineering experience spanning applied AI/agent systems, computer vision and video intelligence, quantitative ML, multimodal research, speech, edge inference, distributed backends, and production delivery. Master of Science in Computer Engineering, University of Arkansas, GPA 4.0/4.0.
 
 Canonical human-readable HTML pages are the authoritative public content. The portfolio intentionally exposes system responsibilities, evidence, research methodology, and engineering boundaries while withholding confidential implementation detail.
 
