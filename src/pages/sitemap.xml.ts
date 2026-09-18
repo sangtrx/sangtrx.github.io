@@ -4,9 +4,9 @@ import { withBase } from '../lib/paths';
 export const prerender = true;
 
 const routes = [
-  { path: '/', lastmod: '2026-09-10' },
+  { path: '/', lastmod: '2026-09-18' },
   { path: '/about', lastmod: '2026-09-10' },
-  { path: '/resume', lastmod: '2026-09-10' },
+  { path: '/resume', lastmod: '2026-09-18' },
   { path: '/yhct', lastmod: '2026-09-11' },
   { path: '/work/yhct', lastmod: '2026-09-11' },
   { path: '/work/curren', lastmod: '2026-09-10' },
