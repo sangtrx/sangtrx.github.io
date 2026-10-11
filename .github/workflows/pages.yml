@@ -82,7 +82,10 @@ jobs:
               "${ORIGIN}/resume",
               "${ORIGIN}/yhct",
               "${ORIGIN}/work/yhct",
-              "${ORIGIN}/work/curren"
+              "${ORIGIN}/work/curren",
+              "${ORIGIN}/work/epic-video",
+              "${ORIGIN}/work/enterprise-agents",
+              "${ORIGIN}/work/interview-voice"
             ]
           }
           EOF
