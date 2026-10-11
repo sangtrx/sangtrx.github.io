@@ -127,6 +127,52 @@ export const projects = [
     href: '/work/curren',
     accent: 'blue',
   },
+  {
+    slug: 'epic-video',
+    index: '03',
+    title: 'Production Multi-Camera Video Intelligence',
+    kicker: 'EPIC TECHNOLOGY · Computer Vision & Physical-World AI',
+    summary:
+      'The challenge beyond object detection: making heterogeneous cameras source-qualified, fresh, observable and recoverable, then connecting perception to trusted events and evidence on constrained hardware.',
+    role: 'AI / Computer Vision Systems Lead · EPIC TECHNOLOGY',
+    year: '2025 — Present',
+    status: 'Production multi-camera software · sensitive deployment details withheld',
+    proof: ['Source identity and freshness', 'Temporal detection and evidence', 'Bounded recovery'],
+    tags: ['Video AI', 'Computer Vision', 'YOLO', 'ALPR', 'Tracking', 'Media pipelines'],
+    href: '/work/epic-video',
+    accent: 'blue',
+  },
+  {
+    slug: 'enterprise-agents',
+    index: '04',
+    title: 'Enterprise Conversational AI',
+    kicker: 'FPT Software · Team-built agent systems',
+    summary:
+      'My primary work was designing prompts, graph-node logic and AI tools within a broader enterprise agent platform: conversation state, retrieval, safety and service failure boundaries.',
+    role: 'AI Engineer · FPT Software',
+    year: '2024 — 2025',
+    status: 'Historical team product · personal AI-layer contributions distinguished',
+    proof: ['AI graph/node logic', 'Prompts and tools', 'System-state boundaries'],
+    tags: ['Enterprise AI', 'Agents', 'LangGraph', 'Azure OpenAI', 'RAG'],
+    href: '/work/enterprise-agents',
+    accent: 'blue',
+  },
+  {
+    slug: 'interview-voice',
+    index: '05',
+    title: 'Interview & Voice AI Systems',
+    kicker: 'FPT Software · Conversation, speech & evaluation',
+    summary:
+      'Speech-enabled interview workflows integrating browser interaction, stateful scenarios, asynchronous AI services and evaluation, with explicit system-versus-personal ownership boundaries.',
+    role: 'AI Engineer · FPT Software',
+    year: '2024 — 2025',
+    status: 'Historical team application · no invented speech/scale metrics',
+    proof: ['Voice interaction', 'Conversation/scenario state', 'Async evaluation'],
+    tags: ['Voice AI', 'Azure Speech', 'Next.js', 'Python', 'Interview AI'],
+    href: '/work/interview-voice',
+    accent: 'blue',
+  },
+
 ];
 
 export const systemPortfolio = [
@@ -146,6 +192,7 @@ export const systemPortfolio = [
     summary:
       'Physical-world video AI spanning heterogeneous media sources, perception and tracking, temporal events, evidence, monitoring, and recovery under constrained hardware and vendor interfaces.',
     signal: 'Production physical-world AI',
+    href: '/work/epic-video',
   },
   {
     period: '2025 — Present',
@@ -160,8 +207,18 @@ export const systemPortfolio = [
     title: 'AI4U Enterprise Conversational Agent',
     owner: 'FPT Software · AI Engineer',
     summary:
-      'Enterprise conversational AI with retrieval, tool/model routing, memory and safety controls, multilingual speech workflows, distributed background work, and production APIs.',
-    signal: 'Enterprise agents · voice · RAG',
+      'Team-built enterprise assistant with Azure OpenAI, retrieval and graph/tool workflows; personal contributions centered on AI prompts, nodes and tools.',
+    signal: 'Enterprise agents · RAG',
+    href: '/work/enterprise-agents',
+  },
+  {
+    period: '2024 — 2025',
+    title: 'Interview & Voice AI Systems',
+    owner: 'FPT Software · AI Engineer (team project)',
+    summary:
+      'Speech-enabled interview and transcription workflows with browser voice interaction, conversational scenarios, asynchronous AI dialogue/evaluation and backend services.',
+    signal: 'Voice & interview AI · evaluation',
+    href: '/work/interview-voice',
   },
   {
     period: '2021 — 2024',
