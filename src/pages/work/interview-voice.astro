@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { profile } from '../../data/site';
+import { personId, personSchema, websiteId, websiteSchema } from '../../lib/identity';
+import { withBase } from '../../lib/paths';
+
+const root = Astro.site ?? new URL('https://sangtruong.me');
+const canonical = new URL(withBase('/work/interview-voice'), root).href;
+const jsonLd = [personSchema(root), websiteSchema(root), {
+  '@type': 'CreativeWork', '@id': `${canonical}#case-study`, url: canonical,
+  name: 'Speech-Enabled Interview AI Systems — Sang Truong',
+  description: 'A public technical overview of interview dialogue, browser voice interaction, backend services and evaluation workflows in a team-built FPT project.',
+  author: { '@id': personId(root) }, isPartOf: { '@id': websiteId(root) }, inLanguage: 'en',
+}];
+const stages = [
+  ['Conversation experience', 'Interactive interview UI, voice capture and speech-service integration'],
+  ['Interview services', 'Session context, question/scenario handling and authenticated application APIs'],
+  ['AI dialogue jobs', 'Asynchronous language-model calls, prompts, retry behavior and conversation evaluation'],
+  ['Result and review', 'Structured session outcomes and separation of processing state from what the user sees'],
+];
+---
+<BaseLayout
+  title="Interview & Voice AI Systems | Sang Truong"
+  description="Speech-enabled interview AI: browser audio interaction, dialogue-state workflows, backend integration, asynchronous AI jobs and evaluation."
+  pageType="article"
+  jsonLd={jsonLd}
+>
+  <article class="case container">
+    <a class="back-link" href={withBase('/#work')}>← Flagship systems</a>
+    <header>
+      <p class="eyebrow">FPT Software · Interview AI · Speech & Conversation</p>
+      <h1>Voice is a product workflow, not just an API.</h1>
+      <p class="lede">My FPT work also included multilingual speech and interview-oriented AI services. The surrounding team system connected a browser-based conversation experience with interview backends and asynchronous AI jobs. The hard questions were how to keep turns, language, status, processing and evaluation coherent across those boundaries.</p>
+      <div class="facts"><div><span>Historical role</span><strong>AI Engineer · FPT Software</strong></div><div><span>System</span><strong>Speech-enabled interview workflows</strong></div><div><span>Claim boundary</span><strong>Team delivery · no invented speech metrics</strong></div></div>
+    </header>
+
+    <section class="block section-rule two">
+      <div><p class="eyebrow">Why it is different</p><h2>Interactive audio meets asynchronous reasoning.</h2></div>
+      <div class="copy"><p>Recording, transcription, interview prompting and conversation evaluation do not share the same latency or failure characteristics. A useful application must distinguish what the user said, what was transcribed, which turn is active, and whether evaluation or generation has completed.</p><p>The source-backed technology environment included web UI and Azure Speech integration, Java interview APIs, Python asynchronous OpenAI-based scenario jobs and operational deployment tooling. These are team-system components; I do not claim personal authorship of each one.</p></div>
+    </section>
+
+    <section class="block section-rule">
+      <p class="eyebrow">The application boundary</p><h2>Four stages of a voice-interview session.</h2>
+      <div class="stages">{stages.map(([name, description], index) => <article><span>{String(index + 1).padStart(2,'0')}</span><div><h3>{name}</h3><p>{description}</p></div></article>)}</div>
+    </section>
+
+    <section class="block section-rule two">
+      <div><p class="eyebrow">What the experience demonstrates</p><h2>Stateful conversational product engineering.</h2></div>
+      <div class="copy"><p>This work strengthened my experience with speech-enabled software, multi-turn dialogue, interview-specific prompt flows, structured evaluation, API contracts and asynchronous failure modes — capabilities relevant to copilots and voice agents beyond a single provider SDK.</p><p>No claimed custom ASR model training, independently measured word-error rate, speech latency, fleet/user scale or SLA is implied by this case study.</p></div>
+    </section>
+
+    <section class="block section-rule">
+      <p class="eyebrow">Related work</p>
+      <h2>From voice to broader agent systems.</h2>
+      <div class="hero-actions"><a class="button primary" href={withBase('/work/enterprise-agents')}>Enterprise conversational AI</a><a class="button ghost" href={withBase('/resume')}>Full résumé</a><a class="button ghost" href={`mailto:${profile.email}`}>Contact</a></div>
+    </section>
+  </article>
+</BaseLayout>
+<style>
+  .case { padding: 45px 0 88px; }.back-link { display:inline-block; color:var(--muted); margin-bottom:50px; }
+  header { max-width: 950px; padding-bottom:70px; }h1 { font-size:clamp(3rem,7vw,6.2rem); line-height:1.04; letter-spacing:-.055em; max-width:13ch; margin:18px 0 28px; }
+  .lede { font-size:clamp(1.1rem,2.1vw,1.45rem); line-height:1.65; max-width:850px; }
+  .facts { display:flex; flex-wrap:wrap; gap:35px; margin-top:40px; }.facts div { display:grid; gap:7px; }.facts span { color:var(--muted); text-transform:uppercase; font-size:.75rem; letter-spacing:.09em; }.facts strong { font-size:.95rem; }
+  .block { padding:70px 0; }.block h2 { font-size:clamp(2rem,4vw,3.3rem); letter-spacing:-.04em; line-height:1.1; max-width:18ch; margin:15px 0 25px; }
+  .two { display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(25px,7vw,90px); }.copy p { color:var(--muted); line-height:1.75; font-size:1.08rem; margin:0 0 18px; }
+  .stages { border-top:1px solid var(--line); }.stages article { display:grid; grid-template-columns:65px 1fr; gap:22px; padding:26px 0; border-bottom:1px solid var(--line); }.stages span { color:var(--accent); font-size:.8rem; font-weight:700; }.stages h3 { margin:0 0 9px; font-size:1.14rem; }.stages p { color:var(--muted); line-height:1.65; margin:0; }
+  .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+  @media(max-width:760px){ .two { grid-template-columns:1fr; }.block { padding:50px 0; } }
+</style>
