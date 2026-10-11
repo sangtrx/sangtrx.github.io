@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { profile } from '../../data/site';
+import { personId, personSchema, websiteId, websiteSchema } from '../../lib/identity';
+import { withBase } from '../../lib/paths';
+
+const root = Astro.site ?? new URL('https://sangtruong.me');
+const canonical = new URL(withBase('/work/enterprise-agents'), root).href;
+const jsonLd = [personSchema(root), websiteSchema(root), {
+  '@type': 'CreativeWork', '@id': `${canonical}#case-study`, url: canonical,
+  name: 'Enterprise Conversational AI — Sang Truong',
+  description: 'A bounded first-person account of AI prompt, graph-node and tool engineering within a team-built enterprise assistant.',
+  author: { '@id': personId(root) }, isPartOf: { '@id': websiteId(root) }, inLanguage: 'en',
+}];
+---
+<BaseLayout
+  title="Enterprise Conversational AI | Sang Truong"
+  description="Building the AI layer of an enterprise conversational system: prompts, stateful graph nodes, tools, retrieval and safe backend integration."
+  pageType="article"
+  jsonLd={jsonLd}
+>
+  <article class="case container">
+    <a class="back-link" href={withBase('/#work')}>← Flagship systems</a>
+    <header>
+      <p class="eyebrow">FPT Software · Enterprise Conversational AI</p>
+      <h1>When a chatbot becomes a system.</h1>
+      <p class="lede">At FPT Software, I worked primarily on prompt design, AI graph-node logic and tools for an enterprise conversational assistant. It was a team product with backend, frontend, retrieval, safety and distributed-service layers — not a system I built alone.</p>
+      <div class="facts"><div><span>Historical role</span><strong>AI Engineer</strong></div><div><span>Direct contribution</span><strong>Prompts · graph nodes · tools</strong></div><div><span>Project scope</span><strong>Team-built enterprise AI</strong></div></div>
+    </header>
+    <section class="block section-rule two">
+      <div><p class="eyebrow">Why architecture mattered</p><h2>The model call was only one stage.</h2></div>
+      <div class="copy"><p>Useful enterprise answers require coherent context, retrieval and tool choice, state continuity, permissions, controlled execution and clear failure handling. A retrieval miss, malformed tool response or queue timeout is not interchangeable with a model hallucination.</p><p>I contributed to the model-facing workflow while collaborating inside a broader Azure OpenAI and application-service ecosystem. I can explain the interfaces and trade-offs without attributing every service implementation to myself.</p></div>
+    </section>
+    <section class="block section-rule">
+      <p class="eyebrow">System-level capabilities</p><h2>Capabilities with boundaries.</h2>
+      <div class="cards">
+        <article><h3>Conversation and orchestration</h3><p>Prompt and graph-node behavior, conversation context and multi-step model decisions.</p></article>
+        <article><h3>Retrieval and tools</h3><p>Knowledge retrieval and tool interactions as explicit capabilities with separate data authority.</p></article>
+        <article><h3>Safety and failure handling</h3><p>Guardrails, deterministic application contracts, recovery and error semantics around probabilistic generation.</p></article>
+        <article><h3>Service integration</h3><p>Python AI services interacting with team-owned product APIs, background workers and web interfaces.</p></article>
+      </div>
+    </section>
+    <section class="block section-rule two">
+      <div><p class="eyebrow">Engineering lesson</p><h2>Keep ownership of state and truth explicit.</h2></div>
+      <div class="copy"><p>As soon as an assistant can search, route, remember and call tools, reliability depends on much more than fluent generated text. Each boundary needs to communicate what was observed, what failed, and what is still unknown.</p><p>My strongest personal contribution here was the AI workflow layer. I do not claim sole authorship of the product, proprietary model development, or unverified user/throughput metrics.</p></div>
+    </section>
+    <section class="block section-rule">
+      <p class="eyebrow">Related work</p>
+      <h2>Building conversational systems across modalities.</h2>
+      <div class="hero-actions"><a class="button primary" href={withBase('/work/interview-voice')}>Interview & voice AI</a><a class="button ghost" href={withBase('/work/yhct')}>Clinical AI</a><a class="button ghost" href={`mailto:${profile.email}`}>Contact</a></div>
+    </section>
+  </article>
+</BaseLayout>
+<style>
+  .case { padding: 45px 0 88px; }.back-link { display: inline-block; color: var(--muted); margin-bottom: 50px; }
+  header { max-width: 960px; padding-bottom: 70px; }h1 { font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.04; letter-spacing: -.055em; max-width: 12ch; margin: 18px 0 28px; }
+  .lede { font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.65; max-width: 840px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 35px; margin-top: 40px; }.facts div { display: grid; gap: 7px; }.facts span { color: var(--muted); text-transform: uppercase; font-size: .75rem; letter-spacing: .09em; }.facts strong { font-size: .95rem; }
+  .block { padding: 70px 0; }.block h2 { font-size: clamp(2rem, 4vw, 3.3rem); letter-spacing: -.04em; line-height: 1.1; max-width: 18ch; margin: 15px 0 25px; }
+  .two { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(25px, 7vw, 90px); }.copy p { color: var(--muted); line-height: 1.75; font-size: 1.08rem; margin: 0 0 18px; }
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }.cards article { padding: 24px; border: 1px solid var(--line); border-radius: 12px; }.cards h3 { font-size: 1.12rem; margin: 0 0 10px; }.cards p { color: var(--muted); line-height: 1.7; margin: 0; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+  @media (max-width: 760px) { .two,.cards { grid-template-columns:1fr; }.block { padding: 50px 0; } }
+</style>

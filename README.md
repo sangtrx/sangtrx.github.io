@@ -19,6 +19,9 @@ The site is deliberately **high-signal and low-disclosure**. Public pages show s
 
 - **Clinical AI & Decision Support** — an EPIC TECHNOLOGY hospital project, presented as a bounded public architecture case study around clinician workflows, AI reasoning, governed evidence, clinical authority, and delivery constraints.
 - **Curren** — an independent quantitative research and systems project, presented around point-in-time evidence, research/evaluation discipline, guarded runtime state, and a sanitized public verification boundary. No guaranteed or validated profitable alpha is claimed.
+- **Production Multi-Camera Video Intelligence** — EPIC TECHNOLOGY; client-safe treatment of heterogeneous media, source identity, temporal events, evidence and recovery, not proprietary topology or invented KPIs.
+- **Enterprise Conversational AI** — FPT Software; team-owned platform with personal contributions to prompts, graph nodes and AI tools.
+- **Interview & Voice AI Systems** — a separate FPT Software project family spanning browser speech interaction, interview APIs, async conversation/evaluation and bounded ownership.
 
 Broader work includes production multi-camera video intelligence, AI-powered education systems, enterprise conversational AI and speech, industrial/edge computer vision, environmental forecasting, and peer-reviewed multimodal/temporal ML research.
 

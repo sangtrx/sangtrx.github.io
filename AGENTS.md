@@ -75,6 +75,10 @@ Present Curren as an independent side project connecting point-in-time evidence,
 
 Describe production and research systems through media/perception/state/evidence/recovery responsibilities. Do not publish unnecessary camera topology, credentials, vendor-specific private interfaces, or unsupported scale/performance metrics.
 
+### FPT AI4U versus interview/voice systems
+
+Maintain two separately identifiable FPT family stories: the enterprise AI4U assistant and the interview/voice application. The historical role is AI Engineer; Sang's candidate-confirmed main direct AI4U contributions were prompts, graph nodes and tools, not personal sole ownership of Java/.NET/UI/GitOps. System-source existence does not prove authorship. Never copy private `fgpt-*`/`LTI*` identifiers, secret values, deployment files or internal module topology to public pages; sanitized engineering capabilities only.
+
 ### Employer/client work
 
 Preserve ownership boundaries. Employer/client systems must not be presented as unrelated personal products. Use public links only when the linked resource is intentionally public and safe.
