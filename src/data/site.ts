@@ -267,10 +267,10 @@ export const experience = [
     role: 'AI Engineer',
     company: 'FPT Software',
     summary:
-      'Built enterprise conversational agents and multilingual voice/real-time AI systems with retrieval, orchestration, distributed workers, guardrails, and production APIs.',
+      'Contributed to two FPT project families: enterprise conversational AI (primarily prompts, graph-node logic and tools) and speech-enabled interview/transcription services in team-built applications.', 
     details: [
-      'Developed stateful enterprise AI with Azure OpenAI, LangGraph/LangChain, Qdrant RAG, tool/model routing, memory controls, and safety boundaries.',
-      'Built multilingual transcription and speech-evaluation services with FastAPI and distributed background processing.',
+      'Designed and implemented AI prompts, graph-node logic and tooling within a team-built Azure OpenAI, LangGraph/LangChain and retrieval/guardrail environment.',
+      'Worked on multilingual transcription and interview/evaluation workflows connected to speech-enabled clients, Python async conversation jobs and application backends.',
     ],
   },
   {
