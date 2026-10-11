@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { profile } from '../../data/site';
+import { personId, personSchema, websiteId, websiteSchema } from '../../lib/identity';
+import { withBase } from '../../lib/paths';
+
+const root = Astro.site ?? new URL('https://sangtruong.me');
+const canonical = new URL(withBase('/work/epic-video'), root).href;
+const jsonLd = [
+  personSchema(root),
+  websiteSchema(root),
+  {
+    '@type': 'CreativeWork',
+    '@id': `${canonical}#case-study`,
+    url: canonical,
+    name: 'Production Multi-Camera Video Intelligence — Sang Truong',
+    description: 'A bounded engineering case study on reliable AI perception across heterogeneous cameras, source identity, temporal events and recovery.',
+    author: { '@id': personId(root) },
+    isPartOf: { '@id': websiteId(root) },
+    inLanguage: 'en',
+  },
+];
+const layers = [
+  ['01', 'Capture and qualify', 'Heterogeneous camera media must become identity-checked, fresh and consistently accessible before inference.'],
+  ['02', 'Perceive and interpret', 'Object detection, license-plate recognition, tracking and temporal rules turn pixels into bounded events.'],
+  ['03', 'Commit evidence', 'Asynchronous persistence, event histories and deduplication separate live decisions from slower record keeping.'],
+  ['04', 'Observe and recover', 'Feed health, source progress and bounded recovery keep a degraded camera from silently looking healthy.'],
+];
+const decisions = [
+  ['Identity before inference', 'A feed with the wrong source or a frozen frame is a correctness failure even if the AI model confidently returns a detection.'],
+  ['Transport as a contract', 'A normalized media boundary lets detection and user-facing viewers consume heterogeneous vendor inputs without inheriting every proprietary behavior.'],
+  ['Temporal state over isolated frames', 'Events need direction, tracking, time windows and deduplication; raw frame detections are not operational answers.'],
+  ['Recovery without identity drift', 'Reconnect/restart paths should be bounded and source-qualified, with explicit states for interruption and recovery.'],
+];
+---
+<BaseLayout
+  title="Production Video Intelligence | Sang Truong"
+  description="Production computer vision beyond models: camera acquisition, source identity, video transport, temporal detection, persistence and recovery under constrained operations."
+  pageType="article"
+  jsonLd={jsonLd}
+>
+  <article class="case container">
+    <a class="back-link" href={withBase('/#work')}>← Flagship systems</a>
+    <header class="case-hero">
+      <p class="eyebrow">EPIC TECHNOLOGY · Computer Vision · Physical-World AI</p>
+      <h1>Making real-world video AI dependable.</h1>
+      <p class="case-lede">I led and built most of the software for a production multi-camera intelligence system under EPIC TECHNOLOGY, using AI-assisted development heavily. The difficult part was not choosing a detector: it was reliably connecting mixed-vendor cameras, knowing which source each frame belonged to, and keeping evidence and recovery consistent when media failed.</p>
+      <div class="case-meta">
+        <div><span>Role</span><strong>AI / Computer Vision Systems Lead</strong></div>
+        <div><span>Scope</span><strong>Production software · multi-camera integration</strong></div>
+        <div><span>Boundary</span><strong>Client infrastructure and deployment details withheld</strong></div>
+      </div>
+    </header>
+
+    <section class="case-section section-rule split">
+      <div><p class="eyebrow">The real engineering problem</p><h2>A model can be accurate on the wrong frame.</h2></div>
+      <div class="prose">
+        <p>Camera streams can disconnect, freeze, repeat images, change routes or lose source identity. When a system treats “video URL reachable” as “fresh and correct camera,” the entire downstream AI chain becomes untrustworthy.</p>
+        <p>We needed practical computer vision on resource-constrained hardware and inexpensive mixed-vendor cameras, while still preserving operational event evidence. My direct work centered on the software and integration path; teammates handled camera and physical hardware installation.</p>
+      </div>
+    </section>
+
+    <section class="case-section section-rule">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">System design</p><h2>Four boundaries, one reliable event path.</h2></div><p class="section-note">An intentionally abstracted view, not a client deployment diagram.</p></div>
+      <div class="architecture">
+        {layers.map(([index, name, description]) => <article><span>{index}</span><div><h3>{name}</h3><p>{description}</p></div></article>)}
+      </div>
+    </section>
+
+    <section class="case-section section-rule">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Technical judgment</p><h2>Decisions that mattered.</h2></div><p class="section-note">Software contracts mattered more than claiming a magic accuracy number.</p></div>
+      <div class="decision-grid">{decisions.map(([name, description]) => <article><h3>{name}</h3><p>{description}</p></article>)}</div>
+    </section>
+
+    <section class="case-section section-rule split">
+      <div><p class="eyebrow">Implementation surfaces</p><h2>Beyond model inference.</h2></div>
+      <div class="prose">
+        <p>The work integrated YOLO-based perception, license-plate recognition, object tracking, temporal/event rules, standards-based video transport, role-aware dashboards, evidence capture, background persistence, monitoring and controlled recovery.</p>
+        <p>The resulting system has operated with multiple heterogeneous camera sources in a production setting. Exact client topology, vendor integration steps, accuracy, throughput, latency and uptime are not offered here as independently verified benchmarks.</p>
+      </div>
+    </section>
+
+    <section class="case-section section-rule privacy">
+      <p class="eyebrow">What this demonstrates — and what it does not</p>
+      <h2>End-to-end physical-world AI engineering.</h2>
+      <p>Source validity, media acquisition, perception, temporal interpretation, persistence and recovery need a coherent owner. This project supports hands-on production video-system integration; it does not imply I installed the physical cameras, ran a factory MES/PLC integration or measured an unreported SLA.</p>
+    </section>
+
+    <section class="case-section section-rule case-cta">
+      <p class="eyebrow">Related work</p>
+      <h2>Different domains. The same respect for evidence.</h2>
+      <div class="hero-actions">
+        <a class="button primary" href={withBase('/work/yhct')}>Clinical AI case study</a>
+        <a class="button ghost" href={withBase('/resume')}>Full résumé</a>
+        <a class="button ghost" href={`mailto:${profile.email}`}>Contact</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .case { padding-top: 44px; padding-bottom: 90px; }
+  .back-link { display: inline-block; margin-bottom: 50px; color: var(--muted); }
+  .case-hero { max-width: 980px; padding-bottom: 80px; }
+  .case-hero h1 { max-width: 13ch; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.05; letter-spacing: -.055em; margin: 18px 0 28px; }
+  .case-lede { font-size: clamp(1.1rem, 2.1vw, 1.5rem); line-height: 1.55; max-width: 850px; }
+  .case-meta { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 44px; }
+  .case-meta div { display: grid; gap: 8px; min-width: 180px; }
+  .case-meta span { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .1em; }
+  .case-meta strong { font-size: .92rem; font-weight: 600; }
+  .case-section { padding-top: 72px; padding-bottom: 76px; }
+  .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 7vw, 90px); }
+  .split h2, .section-heading h2, .privacy h2, .case-cta h2 { max-width: 16ch; font-size: clamp(2rem, 3.9vw, 3.3rem); letter-spacing: -.04em; line-height: 1.12; }
+  .prose p { color: var(--muted); font-size: 1.07rem; line-height: 1.75; margin: 0 0 1.3rem; }
+  .architecture { border-top: 1px solid var(--line); }
+  .architecture article { display: grid; grid-template-columns: 65px 1fr; gap: 22px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+  .architecture article span { color: var(--accent); font-size: .82rem; font-weight: 700; }
+  .architecture h3, .decision-grid h3 { font-size: 1.15rem; margin: 0 0 8px; }
+  .architecture p, .decision-grid p { color: var(--muted); line-height: 1.6; margin: 0; }
+  .decision-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .decision-grid article { border: 1px solid var(--line); border-radius: 12px; padding: 25px; }
+  .privacy { max-width: 850px; }
+  .privacy p:last-child { line-height: 1.75; color: var(--muted); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  @media (max-width: 760px) { .split, .decision-grid { grid-template-columns: 1fr; } .case-section { padding-top: 52px; padding-bottom: 54px; } .case-meta { gap: 22px; } }
+</style>
