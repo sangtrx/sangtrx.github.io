@@ -47,7 +47,14 @@ let navigationRevision=0;
 function keyboardBridge(html){
   const code="(function(){document.addEventListener('keydown',function(e){if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;const t=e.target;if(t&&t.closest&&t.closest('input,textarea,select,[contenteditable]'))return;e.preventDefault();parent.postMessage({type:'yhct-atlas-arrow',direction:e.key==='ArrowRight'?1:-1},'*')},true)})()";
   const node='<scr'+'ipt>'+code+'<\/scr'+'ipt>';
-  return html.replace(/<\/body>/i,node+'</body>');
+  const presentationStyle='<sty'+'le id="yhct-chart-only-css">'+
+    'html,body{height:100%!important;overflow:hidden!important;background:#f4f9fd!important}'+
+    '.toolbar,.reader-rail{display:none!important}'+
+    '.container{display:flex!important;flex-direction:column!important;justify-content:center!important;max-width:none!important;width:100vw!important;height:100vh!important;min-height:100vh!important;margin:0!important;padding:0!important}'+
+    '.diagram-container{flex:1!important;min-height:0!important;height:100vh!important;max-height:100vh!important;width:100vw!important;margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}'+
+    '.diagram-container>svg{display:block!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:92vh!important;margin:auto!important}'+
+    '</sty'+'le>';
+  return html.replace(/<\/body>/i,presentationStyle+node+'</body>');
 }
 window.addEventListener('message',e=>{
   if(!unlocked||e.source!==viewer.contentWindow||e.data?.type!=='yhct-atlas-arrow')return;
