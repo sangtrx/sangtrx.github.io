@@ -1,0 +1,68 @@
+{
+  "version": 3,
+  "kdf": {
+    "name": "PBKDF2",
+    "hash": "SHA-256",
+    "iterations": 450000,
+    "salt": "JyEX7QUKpIiQLRQk9SPfag=="
+  },
+  "compression": "gzip",
+  "cipher": "AES-GCM-256",
+  "maps": [
+    {
+      "id": "01",
+      "file": "assets/map-01.enc",
+      "iv": "/bv0JboOdZcx9xmO",
+      "aad": "map-01",
+      "sha256": "e788d4052170a1fb9f0e3832ae80591d7a4a88b4fefa03a389f7affeeaa1185c",
+      "bytes": 762420
+    },
+    {
+      "id": "02",
+      "file": "assets/map-02.enc",
+      "iv": "djJWy9VarPqdakdq",
+      "aad": "map-02",
+      "sha256": "90bb51412cbeb4d11af0eff419e0c9c60eb382e6a94ce2685f6f6195083060cd",
+      "bytes": 760254
+    },
+    {
+      "id": "03",
+      "file": "assets/map-03.enc",
+      "iv": "Tz9AHtkTyX1MeOMM",
+      "aad": "map-03",
+      "sha256": "838fc044c7cc2943db475d6ed2b0deddcb7dd1e5efae2b4f186f3404e65d2215",
+      "bytes": 756159
+    },
+    {
+      "id": "04",
+      "file": "assets/map-04.enc",
+      "iv": "x64ipIiuJHw+1jU7",
+      "aad": "map-04",
+      "sha256": "73cd4b0bf6e7e6d60b7c6e9565602b9abd949279297f7c1f2f6f5320acccc6b3",
+      "bytes": 757118
+    },
+    {
+      "id": "05",
+      "file": "assets/map-05.enc",
+      "iv": "8KqiqEqZuOkAiXKi",
+      "aad": "map-05",
+      "sha256": "a03a57f4b5049274ed69d5081fad9ba7e208e39879f34c37b665166c3c8a519c",
+      "bytes": 753340
+    },
+    {
+      "id": "06",
+      "file": "assets/map-06.enc",
+      "iv": "1xp4zirBm5goDv2P",
+      "aad": "map-06",
+      "sha256": "e76cf34f4f17c48afd8ef29ef458801f7f4769d153810a257e31ee965013bc73",
+      "bytes": 751028
+    }
+  ],
+  "notes": {
+    "file": "assets/notes.enc",
+    "iv": "R1ldb/3Tgyt1dIIM",
+    "aad": "notes-v3",
+    "sha256": "665ef889619d14ba54736ab27b8723f19d02c3c2aaef046641c0e98523d5fa86",
+    "bytes": 13527
+  }
+}
