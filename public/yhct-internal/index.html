@@ -29,6 +29,23 @@
 .deck-nav .deck-fullscreen{font-size:20px}
 .deck-nav button:disabled{opacity:.42;cursor:wait}
 @media(max-width:580px){.deck-nav{bottom:9px;padding:5px 7px;gap:6px}.deck-nav button{min-width:40px;min-height:40px}}
+
+/* Unified light presentation: white shell around light Archify cards. */
+html,body{background:#f4f8fc!important;color:#18283d!important;color-scheme:light}
+.app,.stage,.workspace,.viewer-wrap{background:#f4f8fc!important}
+.viewer{background:#fff!important}
+.loading{background:#f4f8fc!important;color:#27415c!important}
+.deck-nav{background:rgba(255,255,255,.96)!important;border:1px solid #bdd0e1!important;box-shadow:0 7px 26px #183a581f!important;color:#172f4a!important}
+.deck-nav .deck-counter{color:#27415c!important}
+.deck-nav button{background:#eaf2fa!important;color:#194368!important;border:1px solid #bbd0e5!important}
+.deck-nav button:hover,.deck-nav button:focus-visible{background:#d6eafe!important;outline:2px solid #1783c8!important}
+.lock{background:#edf4fa!important}
+.lock-card{background:#fff!important;border-color:#cbdcec!important;box-shadow:0 20px 60px #24436118!important}
+.lock-card h1,.lock-card .lock-mark{color:#1b3853!important}
+.lock-card .lede,.lock-card .note{color:#45647d!important}
+.lock-card input{background:#fff!important;border-color:#acc3d9!important;color:#142f49!important}
+.lock-card .btn{background:#176db2!important;color:#fff!important}
+.lock-card a{color:#1369ae!important}
 </style></head><body>
 <section id="lock" class="lock"><div class="lock-card"><div class="lock-mark">AI</div><h1>Clinical AI<br>Architecture Atlas</h1><p id="lockLede" class="lede">9 sơ đồ Archify đã đối chiếu source và UAT ngày 15/10/2026, có speaker notes Tiếng Việt và English. Có ghi chú rõ phần nào đang deployed, phần nào vẫn cần nghiệm thu. Sơ đồ và speaker notes đều được mã hóa trước khi publish; password chỉ dùng trong browser.</p><p class="note">Bản 6 sơ đồ ngày 13/10 lưu tại <a style="color:#7db7ff" href="./history/20261013/">history</a>. Bộ 10 sơ đồ cũ lưu tại <a style="color:#7db7ff;text-underline-offset:3px" href="./legacy/">Legacy atlas</a>, dùng mật khẩu cũ.</p><form id="unlockForm" class="form-row"><input id="password" type="password" autocomplete="current-password" spellcheck="false" placeholder="Presentation password" aria-label="Presentation password" autofocus><button id="unlockBtn" class="btn" type="submit">Mở atlas</button></form><div id="error" class="error" role="alert"></div><p class="note">Internal presentation · AES-GCM · PBKDF2 · Reload trang sẽ khóa lại atlas.</p></div></section>
 <section id="app" class="app hidden"><aside id="sidebar" class="sidebar"><div class="side-head"><small>INTERNAL · CLINICAL AI</small><h2>Architecture Atlas</h2><p id="sideIntro"></p><div class="lang-toggle"><button id="viBtn" class="btn secondary active" type="button">Tiếng Việt</button><button id="enBtn" class="btn secondary" type="button">English</button></div></div><nav id="mapList" class="map-list"></nav><div class="side-foot"><button id="prevBtn" class="btn secondary" type="button">←</button><button id="nextBtn" class="btn secondary" type="button">→</button></div></aside>
@@ -54,7 +71,14 @@ function keyboardBridge(html){
     '.diagram-container{flex:1!important;min-height:0!important;height:100vh!important;max-height:100vh!important;width:100vw!important;margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}'+
     '.diagram-container>svg{display:block!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:92vh!important;margin:auto!important}'+
     '</sty'+'le>';
-  return html.replace(/<\/body>/i,presentationStyle+node+'</body>');
+  // Force the exported Archify light palette regardless of device or iframe defaults.
+  const themed=html
+    .replace('<html lang="en" data-theme="dark"','<html lang="en" data-theme="light"')
+    .replace('var theme = null;', "var theme = 'light';")
+    .replace('function resolveInitial() {',"function resolveInitial() { return 'light';")
+    .replace('function toggle() {',"function toggle() { apply('light'); return;")
+    .replace("apply(e.matches ? 'light' : 'dark');","apply('light');");
+  return themed.replace(/<\/body>/i,presentationStyle+node+'</body>');
 }
 window.addEventListener('message',e=>{
   if(!unlocked||e.source!==viewer.contentWindow||e.data?.type!=='yhct-atlas-arrow')return;
