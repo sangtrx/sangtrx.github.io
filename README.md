@@ -17,10 +17,11 @@ The site is deliberately **high-signal and low-disclosure**. Public pages show s
 
 ## Flagship public case studies
 
-- **Clinical AI & Decision Support** — an EPIC TECHNOLOGY hospital project, presented as a bounded public architecture case study around clinician workflows, AI reasoning, governed evidence, clinical authority, and delivery constraints.
+- **Clinical AI & Decision Support** — an EPIC TECHNOLOGY hospital deployment built around prescription checks, retrieval-backed answers, deterministic rules and physician authority.
+- **Credit Risk ML & Decision Infrastructure** — an anonymized EPIC TECHNOLOGY project for an Australian lender, covering point-in-time Open Banking features, leakage and training/serving skew, SageMaker inference and a risk-governed production rollout.
 - **Curren** — an independent quantitative research and systems project, presented around point-in-time evidence, research/evaluation discipline, guarded runtime state, and a sanitized public verification boundary. No guaranteed or validated profitable alpha is claimed.
 - **Production Multi-Camera Video Intelligence** — EPIC TECHNOLOGY; client-safe treatment of heterogeneous media, source identity, temporal events, evidence and recovery, not proprietary topology or invented KPIs.
-- **Enterprise Conversational AI** — FPT Software; team-owned platform with personal contributions to prompts, graph nodes and AI tools.
+- **Enterprise Conversational AI** — FPT Software; personally designed and implemented core LangGraph orchestration while surrounding platform/AKS delivery was team-owned.
 - **Interview & Voice AI Systems** — a separate FPT Software project family spanning browser speech interaction, interview APIs, async conversation/evaluation and bounded ownership.
 
 Broader work includes production multi-camera video intelligence, AI-powered education systems, enterprise conversational AI and speech, industrial/edge computer vision, environmental forecasting, and peer-reviewed multimodal/temporal ML research.

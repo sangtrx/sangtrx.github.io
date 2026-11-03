@@ -30,7 +30,7 @@ const jsonLd = [
     url: canonical,
     description: `Résumé for Sang Truong (${publicIdentity.handle}), senior AI engineer building applied AI systems in ${publicIdentity.location}.`,
     inLanguage: 'en',
-    dateModified: '2026-09-18T18:25:00+07:00',
+    dateModified: '2026-11-04',
     isPartOf: { '@id': websiteId(root) },
     mainEntity: { '@id': personId(root) },
     about: { '@id': personId(root) },
@@ -63,7 +63,7 @@ const jsonLd = [
 
     <section class="resume-block">
       <h2>Professional summary</h2>
-      <p>Senior AI engineer and technical lead with 8+ years of professional AI/software engineering experience spanning LLM/RAG/agent systems, computer vision and video intelligence, multimodal learning, quantitative ML, time-series forecasting, speech AI, edge inference, and production AI engineering. I own systems end to end from research and data acquisition through model/tool design, APIs, distributed workloads, GPU/edge optimization, product surfaces, deployment, observability, reliability, and stakeholder delivery. Master of Science in Computer Engineering with a 4.0/4.0 GPA and peer-reviewed work across IJCV, AAAI, IEEE JBHI, Poultry Science, IEEE Access, ICIP, BMVC, and IEEE BHI.</p>
+      <p>Senior AI engineer and Head of AI at EPIC TECHNOLOGY with 8+ years in AI and software. I lead architecture and hands-on implementation across credit-risk ML (Spark/Iceberg, SageMaker), hospital clinical AI, video intelligence, edge inspection and education AI. Previously built core LangGraph orchestration at FPT Software. M.S. in Computer Engineering from the University of Arkansas (4.0/4.0), with eight peer-reviewed papers including IJCV, AAAI and IEEE JBHI.</p>
     </section>
 
     <section class="resume-block">
@@ -173,7 +173,7 @@ const jsonLd = [
     <section class="resume-block">
       <h2>Education</h2>
       <div class="resume-list">{education.map((item) => <article><span>{item.period}</span><div><h3>{item.title} · {item.institution}</h3><p>{item.detail}</p></div></article>)}</div>
-      <p class="muted">Prior Ph.D.-track research is represented in the University of Arkansas research role above; no completed Ph.D. is claimed.</p>
+      <p class="muted">University of Arkansas: fully funded Ph.D. admission in 2021; completed M.S. in Computer Engineering in December 2023.</p>
     </section>
 
     <section class="resume-block">
@@ -187,8 +187,8 @@ const jsonLd = [
     </section>
 
     <section class="resume-block resume-source">
-      <h2>Public evidence boundary</h2>
-      <p>This web résumé follows the current canonical Career OS while intentionally compressing project implementation detail. Public evidence is exposed through bounded case studies, public GitHub work, and Google Scholar; confidential project material, credentials, internal infrastructure labels, patient data, private trading strategy, and operational runbooks remain excluded.</p>
+      <h2>Project details</h2>
+      <p>Selected case studies cover the technical decisions behind my work. Research publications and public code are linked separately; confidential customer information is not published.</p>
       <div class="hero-actions"><a class="button ghost" href={withBase('/#work')}>Project case studies</a><a class="button ghost" href={profile.scholar}>Google Scholar ↗</a></div>
     </section>
   </article>
