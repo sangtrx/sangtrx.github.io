@@ -28,7 +28,7 @@ const jsonLd = [
     name: 'Sang Truong | Senior AI Engineer · Applied AI Systems',
     description: 'Proof-of-work portfolio for Sang Truong (sangtrx), a senior AI engineer building applied AI systems across agents and knowledge, computer vision/video, quantitative ML, multimodal research, and production engineering.',
     inLanguage: 'en',
-    dateModified: '2026-09-18T18:25:00+07:00',
+    dateModified: '2026-11-04',
     isPartOf: { '@id': websiteId(root) },
     about: { '@id': personId(root) },
     mainEntity: { '@id': personId(root) },
@@ -44,7 +44,7 @@ const jsonLd = [
     <div class="hero-grid">
       <div>
         <p class="role-line">{profile.name} · {profile.title}</p>
-        <h1>I build AI systems that survive contact with reality.</h1>
+        <h1>I build the models, data and software that make AI useful.</h1>
       </div>
       <div class="hero-side">
         <p class="hero-intro">{profile.intro}</p>
@@ -85,9 +85,9 @@ const jsonLd = [
     <div class="section-heading">
       <div>
         <p class="eyebrow">Flagship systems</p>
-        <h2>High signal. Deliberately low disclosure.</h2>
+        <h2>Selected systems I've built and led.</h2>
       </div>
-      <p class="section-note">The case studies expose the engineering decisions a technical interviewer needs to judge depth — authority, state, evidence, causality, failure, deployment — while withholding private corpus, strategy, credentials, topology, runbooks, and internal identifiers.</p>
+      <p class="section-note">Clinical AI, credit-risk ML, quant systems and production vision: the architecture choices, failures and release decisions behind the work. Confidential client data and proprietary implementation remain private.</p>
     </div>
     <div class="project-list">
       {projects.map((project) => <ProjectCard project={project} />)}
@@ -100,7 +100,7 @@ const jsonLd = [
     <div class="section-heading">
       <div>
         <p class="eyebrow">System portfolio</p>
-        <h2>The work is broader than two case studies.</h2>
+        <h2>More systems, from factory floors to enterprise agents.</h2>
       </div>
       <p class="section-note">Selected work across healthcare, education, enterprise agents, physical-world AI, quantitative systems, and research. Client/employer ownership stays explicit; sensitive implementation stays private.</p>
     </div>
@@ -146,7 +146,7 @@ const jsonLd = [
         <p class="eyebrow">Career</p>
         <h2>Research depth. Product ownership. Production constraints.</h2>
       </div>
-      <p class="section-note">A broad engineering path across embedded vision, quantitative systems, multimodal research, enterprise agents, clinical AI, education platforms, and production video intelligence.</p>
+      <p class="section-note">My path runs from embedded computer vision and quant research to enterprise agents, credit-risk ML and production AI delivery.</p>
     </div>
     <div class="timeline">
       {experience.map((item) => (

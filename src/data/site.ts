@@ -3,7 +3,7 @@ export const profile = {
   title: 'Senior AI Engineer · Applied AI Systems',
   eyebrow: 'AI Systems · Computer Vision · Quantitative ML · Research',
   intro:
-    'Senior AI engineer and technical lead with 8+ years of professional AI/software engineering experience spanning agents and knowledge systems, computer vision and video, quantitative ML, speech, edge inference, and production software. I work end to end: from research and data contracts to application architecture, deployment, evaluation, reliability, and stakeholder acceptance.',
+    'I lead AI engineering at EPIC TECHNOLOGY and still work directly on architecture and code. Recent work includes credit-risk ML on AWS, clinical AI for hospital physicians, production video intelligence and factory-floor inspection. Before EPIC, I built core enterprise-agent orchestration at FPT Software; my research and independent quant work inform how I evaluate models and build reliable systems.',
   email: 'tqsang97@gmail.com',
   github: 'https://github.com/sangtrx',
   linkedin: 'https://linkedin.com/in/tqsang',
@@ -13,7 +13,7 @@ export const profile = {
 
 export const credibility = [
   { label: 'Current role', value: 'Head of Artificial Intelligence' },
-  { label: 'Professional AI / software experience', value: '8+ years' },
+  { label: 'AI / software engineering', value: '8+ years' },
   { label: 'Graduate degree', value: 'MS Computer Engineering · 4.0/4.0' },
   { label: 'Research', value: 'IJCV · AAAI Oral · IEEE JBHI · Poultry Science' },
 ];
@@ -50,10 +50,10 @@ export const capabilityDomains = [
     index: '01',
     title: 'Applied AI · Agents · Voice · RAG',
     summary:
-      'Production AI where knowledge, tools, state, safety, evaluation, and user workflows matter as much as the model call.',
+      'I build the orchestration, data contracts, APIs and safeguards that turn language models into working software.',
     evidence: [
       'Clinical decision support with governed knowledge, citations, deterministic application authority, and explicit human/production boundaries',
-      'Enterprise conversational AI with retrieval, tool/model routing, memory controls, guardrails, and distributed workloads',
+      'Designed core LangGraph orchestration for a multi-tenant enterprise assistant: tenant-scoped retrieval, tools, state and failure handling',
       'Multilingual speech and real-time interaction across API, worker, and browser-facing paths',
     ],
     stack: 'Python · FastAPI · LangGraph/LangChain · Azure OpenAI · Qdrant/Milvus/pgvector · PostgreSQL · Playwright · Celery/RabbitMQ/Redis',
@@ -72,15 +72,16 @@ export const capabilityDomains = [
   },
   {
     index: '03',
-    title: 'Quantitative Research · Trading Systems',
+    title: 'Quantitative ML · Credit Risk · Trading Systems',
     summary:
-      'Research and runtime engineering built around point-in-time evidence, causal computation, disciplined evaluation, durable state, and guarded execution boundaries.',
+      'From credit-risk modeling to market research, I work on data availability, leakage, validation and production inference.',
     evidence: [
-      'Curren: point-in-time research pipeline and shared research/runtime semantics without exposing strategy internals',
+      'EPIC: Open Banking/CDR features with Spark/Iceberg, XGBoost/LightGBM validation and SageMaker inference',
+      'Curren: point-in-time market research, probabilistic forecasting and source-driven signal operations',
       'Leakage-aware evaluation, reproducible data artifacts, selection controls, lifecycle/risk state, and reconciliation',
       'Earlier equity, crypto, and FX research with ML ensembles, market data, cloud execution, and experiment tracking',
     ],
-    stack: 'Rust · Python · Arrow/Parquet · Polars · DuckDB · LightGBM · CatBoost · XGBoost · Scikit-learn · SciPy · Statsmodels · Optuna · NautilusTrader',
+    stack: 'Python · Rust · Spark · Iceberg · SageMaker · XGBoost · LightGBM · Arrow/Parquet · Polars · DuckDB · Scikit-learn · NautilusTrader',
   },
   {
     index: '04',
@@ -103,25 +104,40 @@ export const projects = [
     title: 'Clinical AI for a Traditional Medicine Hospital',
     kicker: 'EPIC TECHNOLOGY · Clinical AI & Decision Support',
     summary:
-      'A clinician-facing AI system for knowledge lookup, interaction analysis, prescription review, and grounded Q&A. The public case study shows the engineering boundary and safety model while intentionally withholding private corpus, deployment, and implementation detail.',
+      'Built the clinical AI platform for prescription extraction, interaction and dose checks, plus source-grounded answers. FastAPI, hybrid Qdrant retrieval and deterministic clinical rules keep physician decisions separate from generated text.',
     role: 'AI Architect / Lead Builder · EPIC TECHNOLOGY',
     year: '2026',
-    status: 'Clinician-facing system · governed validation and deployment boundary',
+    status: 'Deployed clinical AI · physician decisions remain authoritative',
     proof: ['Governed knowledge', 'Durable application state', 'Explicit clinical authority'],
     tags: ['Clinical AI', 'Agents', 'RAG', 'FastAPI', 'PostgreSQL', 'On-prem'],
     href: '/work/yhct',
     accent: 'blue',
   },
   {
-    slug: 'curren',
+    slug: 'credit-risk',
     index: '02',
+    title: 'Credit Risk ML & Decision Infrastructure',
+    kicker: 'EPIC TECHNOLOGY · Confidential Australian lender',
+    summary:
+      'Led an AWS-based credit-risk platform combining consent-qualified Open Banking data, point-in-time Spark/Iceberg features, XGBoost/LightGBM validation and SageMaker scoring. Corrected leakage and training/serving skew ahead of a staged production rollout.',
+    role: 'Head of AI · Technical Lead · EPIC TECHNOLOGY',
+    year: 'Nov 2025 — Present',
+    status: 'Production · approved personal-loan scoring workflow',
+    proof: ['Point-in-time features', 'Offline/online parity', 'Risk-governed deployment'],
+    tags: ['Credit Risk', 'AWS', 'Spark', 'Iceberg', 'SageMaker', 'MLOps'],
+    href: '/work/credit-risk',
+    accent: 'blue',
+  },
+  {
+    slug: 'curren',
+    index: '03',
     title: 'Curren',
     kicker: 'Independent quantitative intelligence & trading-systems project',
     summary:
       'A solo-built quantitative research and systems platform connecting point-in-time evidence, reproducible evaluation, shared research/runtime semantics, guarded operational state, and a sanitized public verification surface — without publishing strategy internals.',
     role: 'Independent AI/Quant Side Project · Solo Builder',
     year: 'Jun 2026 — Present',
-    status: 'Research + platform engineering · no profitability claim',
+    status: 'Independent research and operating systems',
     proof: ['Point-in-time evidence', 'Research/runtime parity', 'Read-only public surface'],
     tags: ['Quant Research', 'Rust', 'Python', 'PIT Data', 'Trading Systems', 'MCP'],
     href: '/work/curren',
@@ -129,7 +145,7 @@ export const projects = [
   },
   {
     slug: 'epic-video',
-    index: '03',
+    index: '04',
     title: 'Production Multi-Camera Video Intelligence',
     kicker: 'EPIC TECHNOLOGY · Computer Vision & Physical-World AI',
     summary:
@@ -144,29 +160,29 @@ export const projects = [
   },
   {
     slug: 'enterprise-agents',
-    index: '04',
+    index: '05',
     title: 'Enterprise Conversational AI',
     kicker: 'FPT Software · Team-built agent systems',
     summary:
-      'My primary work was designing prompts, graph-node logic and AI tools within a broader enterprise agent platform: conversation state, retrieval, safety and service failure boundaries.',
+      'Designed and implemented core LangGraph orchestration for a multi-tenant enterprise agent platform, including tenant-aware retrieval, routing, tools, state, retries and response guards.',
     role: 'AI Engineer · FPT Software',
     year: '2024 — 2025',
-    status: 'Historical team product · personal AI-layer contributions distinguished',
-    proof: ['AI graph/node logic', 'Prompts and tools', 'System-state boundaries'],
+    status: 'Core AI orchestration · team-delivered product',
+    proof: ['Typed agent state', 'Tenant-aware retrieval', 'Tool and retry contracts'],
     tags: ['Enterprise AI', 'Agents', 'LangGraph', 'Azure OpenAI', 'RAG'],
     href: '/work/enterprise-agents',
     accent: 'blue',
   },
   {
     slug: 'interview-voice',
-    index: '05',
+    index: '06',
     title: 'Interview & Voice AI Systems',
     kicker: 'FPT Software · Conversation, speech & evaluation',
     summary:
       'Speech-enabled interview workflows integrating browser interaction, stateful scenarios, asynchronous AI services and evaluation, with explicit system-versus-personal ownership boundaries.',
     role: 'AI Engineer · FPT Software',
     year: '2024 — 2025',
-    status: 'Historical team application · no invented speech/scale metrics',
+    status: 'Multilingual speech and interview workflows',
     proof: ['Voice interaction', 'Conversation/scenario state', 'Async evaluation'],
     tags: ['Voice AI', 'Azure Speech', 'Next.js', 'Python', 'Interview AI'],
     href: '/work/interview-voice',
@@ -177,11 +193,20 @@ export const projects = [
 
 export const systemPortfolio = [
   {
+    period: 'Nov 2025 — Present',
+    title: 'Credit Risk ML & Decision Infrastructure',
+    owner: 'EPIC TECHNOLOGY · Head of AI / Technical Lead',
+    summary:
+      'Built the consent-aware Open Banking/Spark/Iceberg feature and SageMaker risk-scoring path for a confidential Australian lender. Temporal leakage, offline/online parity and lender approval were explicit rollout gates.',
+    signal: 'Production credit risk · AWS / MLOps',
+    href: '/work/credit-risk',
+  },
+  {
     period: '2026',
     title: 'Hospital Clinical AI & Decision Support',
     owner: 'EPIC TECHNOLOGY · AI Architect / Lead Builder',
     summary:
-      'Clinician-facing lookup, interaction analysis, prescription review, and knowledge Q&A with governed evidence, citations, durable state, and explicit clinical authority boundaries.',
+      'Designed and deployed physician-facing clinical AI for prescription extraction, interaction/contraindication and dose checks, with source-grounded answers and deterministic medical rules.',
     signal: 'Clinical AI · governed knowledge',
     href: '/work/yhct',
   },
@@ -203,11 +228,27 @@ export const systemPortfolio = [
     signal: 'Education AI · human review',
   },
   {
+    period: '2025 — Present',
+    title: 'Manufacturing Fastener Visual Inspection',
+    owner: 'EPIC TECHNOLOGY · AI / Computer Vision Engineering',
+    summary:
+      'Deployed edge YOLO inspection on one Japanese customer production line. Owned dataset preparation, fixture/ROI calibration and part-level decisions; handled false rejects after camera movement by recalibrating the vision path.',
+    signal: 'Production manufacturing · edge CV',
+  },
+  {
+    period: '2025 — Present',
+    title: 'Internal AI Meeting Tool',
+    owner: 'EPIC TECHNOLOGY · AI Systems Engineering',
+    summary:
+      'Built and deployed an internally accepted meeting assistant with live speech, multi-turn conversation state and project-aware retrieval; addressed stale context and cross-project contamination.',
+    signal: 'Internal deployment · speech / RAG',
+  },
+  {
     period: '2024 — 2025',
     title: 'AI4U Enterprise Conversational Agent',
     owner: 'FPT Software · AI Engineer',
     summary:
-      'Team-built enterprise assistant with Azure OpenAI, retrieval and graph/tool workflows; personal contributions centered on AI prompts, nodes and tools.',
+      'Personally built core LangGraph orchestration for multi-tenant enterprise agents, including routing, tenant-aware retrieval, tool contracts and failure handling; wider platform delivery remained team-owned.',
     signal: 'Enterprise agents · RAG',
     href: '/work/enterprise-agents',
   },
@@ -245,11 +286,12 @@ export const experience = [
     role: 'Head of Artificial Intelligence',
     company: 'EPIC TECHNOLOGY',
     summary:
-      'Leading hands-on architecture and delivery across clinical AI, education AI, computer vision/video intelligence, and AI platform engineering.',
+      'Hands-on Head of AI leading architecture and implementation across production credit-risk ML, hospital clinical AI, video intelligence, manufacturing inspection and education AI.',
     details: [
-      'Own system boundaries, architecture, implementation, deployment, evaluation, observability, recovery, and stakeholder acceptance across applied AI programs.',
-      'Built clinician-facing clinical AI with governed knowledge and explicit fact/safety boundaries.',
-      'Built education AI and production multi-camera vision systems under real infrastructure, hardware, and operational constraints.',
+      'Led point-in-time Open Banking/CDR and Spark/Iceberg features, XGBoost/LightGBM risk challengers and SageMaker scoring for an Australian lender; corrected leakage and offline/online skew before rollout.',
+      'Designed and deployed hospital clinical AI with deterministic prescription rules, Qdrant retrieval and grounded physician answers.',
+      'Built production video intelligence, edge YOLO inspection on a manufacturing line, teacher-reviewed Open edX AI and an internal AI meeting tool.',
+      'Led cross-functional delivery while staying hands-on across backend, AI models, evaluation, deployment and recovery.',
     ],
   },
   {
@@ -257,7 +299,7 @@ export const experience = [
     role: 'AI Tech Lead · Part-time / Consulting',
     company: 'A9 IOT',
     summary:
-      'Leading environmental IoT forecasting workflows from preprocessing and evaluation through inference, visualization, and stakeholder reporting.',
+      'Project-based AI consulting, including FastAPI/LightGBM sensor forecasting with 16 metrics, 72 lag features and 36 recursive forecast steps.',
     details: [
       'Worked across LSTM, XGBoost, ARIMA, Prophet, continuous sensor processing, model evaluation, and reporting.',
     ],
@@ -267,10 +309,10 @@ export const experience = [
     role: 'AI Engineer',
     company: 'FPT Software',
     summary:
-      'Contributed to two FPT project families: enterprise conversational AI (primarily prompts, graph-node logic and tools) and speech-enabled interview/transcription services in team-built applications.', 
+      'Designed and implemented the core LangGraph AI orchestration for AI4U and contributed to multilingual speech/interview applications delivered by a wider FPT team.', 
     details: [
-      'Designed and implemented AI prompts, graph-node logic and tooling within a team-built Azure OpenAI, LangGraph/LangChain and retrieval/guardrail environment.',
-      'Worked on multilingual transcription and interview/evaluation workflows connected to speech-enabled clients, Python async conversation jobs and application backends.',
+      'Implemented typed LangGraph state, tenant-aware retrieval, intent routing, tool contracts, retries/idempotency and output guards for enterprise AI4U.',
+      'Contributed to English, Vietnamese, Japanese and Korean speech, browser interaction, session state and asynchronous interview evaluation.',
     ],
   },
   {
@@ -348,7 +390,7 @@ export const teachingExperience = [
 export const achievements = [
   { year: '2023', title: 'Rodger S. Kline Chair in Computer Science and Computer Engineering Scholarship', institution: 'University of Arkansas' },
   { year: '2022', title: 'Reginald R. “Barney” and Jameson A. Baxter Endowed Graduate Scholarship', institution: 'University of Arkansas' },
-  { year: '2021', title: 'Fully Funded Ph.D. Admission', institution: 'University of Arkansas' },
+  { year: '2021', title: 'Fully funded Ph.D. admission · Graduate Assistantship and tuition waiver', institution: 'University of Arkansas' },
   { year: '2015', title: 'First Prize · Ba Ria–Vung Tau Informatics Competition', institution: 'Ba Ria–Vung Tau, Vietnam' },
   { year: '2014', title: 'First Prize · Ba Ria–Vung Tau Informatics Competition', institution: 'Ba Ria–Vung Tau, Vietnam' },
   { year: '2014', title: 'Gold Medal · Vietnam Southern Region Olympic 30/4 — Informatics', institution: 'Vietnam' },
@@ -400,7 +442,13 @@ export const education = [
     period: '2015 — Nov 2019',
     title: 'Bachelor of Engineering in Automation and Control Engineering',
     institution: 'International University — VNU HCMC',
-    detail: 'GPA 3.50/4.00 · Very Good · Top 1% · half-tuition scholarship recipient.',
+    detail: 'GPA 3.50/4.00 · Ranked 2nd in undergraduate cohort (Top 1%) · half-tuition scholarship.',
+  },
+  {
+    period: 'Secondary education',
+    title: 'Specialized Informatics',
+    institution: 'Le Quy Don High School for the Gifted — Vung Tau',
+    detail: 'Specialized high-school program in Informatics.',
   },
 ];
 

@@ -31,17 +31,21 @@ Canonical human-readable HTML pages are the authoritative public content. The po
 - [About](${url('/about')}) — operating model, engineering principles, technical stack, research trajectory, education, and publications.
 - [Résumé](${url('/resume')}) — public chronology and evidence.
 - [Clinical AI architecture — Vietnamese](${url('/yhct')}) — detailed, public-safe Vietnamese explainer covering authority, deterministic clinical logic, evidence, data governance, failure semantics, multi-turn resilience, and release boundaries.
-- [Clinical AI case study](${url('/work/yhct')}) — deliberately abstracted English hospital clinical-AI system boundary.
+- [Clinical AI case study](${url('/work/yhct')}) — hospital clinical-AI engineering and clinical authority.
+- [Credit-risk ML case study](${url('/work/credit-risk')}) — anonymized EPIC Open Banking/Spark/Iceberg/SageMaker platform, leakage/skew investigations and lender-governed rollout.
 - [Curren case study](${url('/work/curren')}) — deliberately abstracted quantitative research/runtime/public-verification boundary.
 - [Production video intelligence](${url('/work/epic-video')}) — EPIC physical-world AI, media qualification, temporal events, evidence, and bounded recovery.
 - [Enterprise conversational AI](${url('/work/enterprise-agents')}) — FPT team system and personal prompt/graph/tool contributions.
 - [Interview and voice AI](${url('/work/interview-voice')}) — separate FPT speech-enabled interview and asynchronous conversation workflows.
 
 ## Selected work
+- Credit Risk ML & Decision Infrastructure — EPIC TECHNOLOGY; confidential Australian lender, staged rollout for approved personal-loan scoring.
 - Hospital Clinical AI & Decision Support — EPIC TECHNOLOGY.
 - Production Multi-Camera Video Intelligence — EPIC TECHNOLOGY.
+- Manufacturing Fastener Visual Inspection — EPIC TECHNOLOGY; deployed on one Japanese customer production line.
+- Internal AI Meeting Tool — EPIC TECHNOLOGY; internally accepted speech/retrieval assistant.
 - AI-Powered Open edX Platform — EPIC TECHNOLOGY.
-- AI4U Enterprise Conversational Agent — FPT Software; personal contribution focused on prompts, AI graph nodes and tools.
+- AI4U Enterprise Conversational Agent — FPT Software; designed and implemented core LangGraph orchestration, including tenant-aware retrieval, tools and failure handling.
 - Interview and Voice AI workflows — separate FPT Software team project family; no unverified speech metrics or full-stack personal ownership.
 - Industrial/poultry computer-vision research and edge inference — University of Arkansas.
 - Curren quantitative research and trading systems — independent side project.

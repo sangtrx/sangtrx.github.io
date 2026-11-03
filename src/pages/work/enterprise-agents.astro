@@ -9,7 +9,7 @@ const canonical = new URL(withBase('/work/enterprise-agents'), root).href;
 const jsonLd = [personSchema(root), websiteSchema(root), {
   '@type': 'CreativeWork', '@id': `${canonical}#case-study`, url: canonical,
   name: 'Enterprise Conversational AI — Sang Truong',
-  description: 'A bounded first-person account of AI prompt, graph-node and tool engineering within a team-built enterprise assistant.',
+  description: 'Core LangGraph orchestration for a multi-tenant enterprise assistant, delivered as the AI engineer within a broader team.',
   author: { '@id': personId(root) }, isPartOf: { '@id': websiteId(root) }, inLanguage: 'en',
 }];
 ---
@@ -23,26 +23,26 @@ const jsonLd = [personSchema(root), websiteSchema(root), {
     <a class="back-link" href={withBase('/#work')}>← Flagship systems</a>
     <header>
       <p class="eyebrow">FPT Software · Enterprise Conversational AI</p>
-      <h1>When a chatbot becomes a system.</h1>
-      <p class="lede">At FPT Software, I worked primarily on prompt design, AI graph-node logic and tools for an enterprise conversational assistant. It was a team product with backend, frontend, retrieval, safety and distributed-service layers — not a system I built alone.</p>
-      <div class="facts"><div><span>Historical role</span><strong>AI Engineer</strong></div><div><span>Direct contribution</span><strong>Prompts · graph nodes · tools</strong></div><div><span>Project scope</span><strong>Team-built enterprise AI</strong></div></div>
+      <h1>Building the core orchestration for enterprise AI.</h1>
+      <p class="lede">At FPT Software, I designed and implemented AI4U's core LangGraph orchestration: typed conversation state, intent routing, tenant-aware retrieval, tool contracts, retries and output guards. It ran within a wider team-delivered enterprise platform.</p>
+      <div class="facts"><div><span>Historical role</span><strong>AI Engineer</strong></div><div><span>Direct contribution</span><strong>Core LangGraph orchestration</strong></div><div><span>Project scope</span><strong>Team-built enterprise AI</strong></div></div>
     </header>
     <section class="block section-rule two">
       <div><p class="eyebrow">Why architecture mattered</p><h2>The model call was only one stage.</h2></div>
-      <div class="copy"><p>Useful enterprise answers require coherent context, retrieval and tool choice, state continuity, permissions, controlled execution and clear failure handling. A retrieval miss, malformed tool response or queue timeout is not interchangeable with a model hallucination.</p><p>I contributed to the model-facing workflow while collaborating inside a broader Azure OpenAI and application-service ecosystem. I can explain the interfaces and trade-offs without attributing every service implementation to myself.</p></div>
+      <div class="copy"><p>Useful enterprise answers require coherent context, retrieval and tool choice, state continuity, permissions, controlled execution and clear failure handling. A retrieval miss, malformed tool response or queue timeout is not interchangeable with a model hallucination.</p><p>I implemented the AI workflow layer with explicit authorization before retrieval, tenant isolation before cache writes, idempotent tool execution and guarded outputs. Other teams owned platform infrastructure and AKS operations.</p></div>
     </section>
     <section class="block section-rule">
       <p class="eyebrow">System-level capabilities</p><h2>Capabilities with boundaries.</h2>
       <div class="cards">
-        <article><h3>Conversation and orchestration</h3><p>Prompt and graph-node behavior, conversation context and multi-step model decisions.</p></article>
-        <article><h3>Retrieval and tools</h3><p>Knowledge retrieval and tool interactions as explicit capabilities with separate data authority.</p></article>
-        <article><h3>Safety and failure handling</h3><p>Guardrails, deterministic application contracts, recovery and error semantics around probabilistic generation.</p></article>
+        <article><h3>Conversation and orchestration</h3><p>Typed LangGraph state, intent routing and multi-step tool/model decisions.</p></article>
+        <article><h3>Retrieval and tools</h3><p>Tenant-scoped access checks before retrieval, defined tool inputs and replay-safe side effects.</p></article>
+        <article><h3>Safety and failure handling</h3><p>Retries, idempotency, output guards and isolation of per-tenant state.</p></article>
         <article><h3>Service integration</h3><p>Python AI services interacting with team-owned product APIs, background workers and web interfaces.</p></article>
       </div>
     </section>
     <section class="block section-rule two">
       <div><p class="eyebrow">Engineering lesson</p><h2>Keep ownership of state and truth explicit.</h2></div>
-      <div class="copy"><p>As soon as an assistant can search, route, remember and call tools, reliability depends on much more than fluent generated text. Each boundary needs to communicate what was observed, what failed, and what is still unknown.</p><p>My strongest personal contribution here was the AI workflow layer. I do not claim sole authorship of the product, proprietary model development, or unverified user/throughput metrics.</p></div>
+      <div class="copy"><p>As soon as an assistant can search, route, remember and call tools, reliability depends on much more than fluent generated text. Each boundary needs to communicate what was observed, what failed, and what is still unknown.</p><p>My contribution was the central AI orchestration rather than the surrounding AKS and platform operations. The system was stronger because each retrieval and tool call had a clear authorization and recovery contract.</p></div>
     </section>
     <section class="block section-rule">
       <p class="eyebrow">Related work</p>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { profile } from '../../data/site';
+import { personId, personSchema, websiteId, websiteSchema } from '../../lib/identity';
+import { withBase } from '../../lib/paths';
+
+const root = Astro.site ?? new URL('https://sangtruong.me');
+const canonical = new URL(withBase('/work/credit-risk'), root).href;
+const jsonLd = [personSchema(root), websiteSchema(root), {
+  '@type': 'CreativeWork',
+  '@id': canonical + '#case-study',
+  url: canonical,
+  name: 'Credit Risk ML & Decision Infrastructure — Sang Truong',
+  description: 'An anonymized EPIC TECHNOLOGY case study on point-in-time credit-risk features, model validation, AWS serving and a governed production rollout.',
+  author: { '@id': personId(root) },
+  isPartOf: { '@id': websiteId(root) },
+  inLanguage: 'en',
+  dateModified: '2026-11-04',
+}];
+---
+<BaseLayout
+  title="Credit Risk ML & Decision Infrastructure | Sang Truong"
+  description="At EPIC, Sang led Open Banking credit-risk ML on AWS: Spark/Iceberg point-in-time features, XGBoost/LightGBM, SageMaker serving, data-leakage and offline/online parity fixes."
+  pageType="article"
+  jsonLd={jsonLd}
+>
+  <article class="case container">
+    <a class="back-link" href={withBase('/#work')}>← Flagship systems</a>
+    <header>
+      <p class="eyebrow">EPIC TECHNOLOGY · Confidential Australian consumer lender</p>
+      <h1>Credit scoring starts with data you could have known.</h1>
+      <p class="lede">I led the architecture and high-risk implementation of a credit-risk ML platform combining consent-qualified Open Banking data with bureau and internal lending history. The scoring workflow went through a staged production rollout in September 2026. The lender's Risk and Compliance teams retained policy thresholds, affordability checks and final lending decisions.</p>
+      <div class="facts">
+        <div><span>My role</span><strong>Head of AI · Technical Lead</strong></div>
+        <div><span>Project</span><strong>Nov 2025 — Present</strong></div>
+        <div><span>Delivery</span><strong>Approved personal-loan workflow</strong></div>
+      </div>
+    </header>
+    <section class="block section-rule two">
+      <div><p class="eyebrow">Data foundation</p><h2>Event time is not decision-time availability.</h2></div>
+      <div class="copy">
+        <p>We processed consent-qualified Consumer Data Right (CDR) data and existing lending records through S3, Apache Iceberg, Glue and Spark. Historical features had to respect both when an event occurred and when the lender could actually use it.</p>
+        <p>A collections join had admitted post-origination information into historical training rows. I traced the availability boundary, excluded future-state records and rebuilt the evaluation data. The corrected Gini was about 0.02–0.03 lower on the matched cohort: an honest reduction in an inflated score, not a deterioration in live loan outcomes.</p>
+      </div>
+    </section>
+    <section class="block section-rule">
+      <p class="eyebrow">Model and serving path</p>
+      <h2>Evaluate offline; serve only qualified features.</h2>
+      <div class="cards">
+        <article><h3>Temporal evaluation</h3><p>XGBoost and LightGBM challengers were compared on eligible, outcome-mature origination cohorts. A representative matched historical comparison moved Gini from approximately 0.42 to 0.46; this is discrimination, not realized default reduction.</p></article>
+        <article><h3>Feature parity</h3><p>Offline Spark and online materialization initially disagreed on roughly 12–18% of golden test records. Shared definitions, fixed examples and differential gates brought golden-set parity above 99.5%.</p></article>
+        <article><h3>Low-latency scoring</h3><p>Precomputed features fed an API Gateway/Lambda and SageMaker inference path. Reported p95 was roughly 128–136 ms for the scoring API, excluding external CDR collection and asynchronous LLM explanation.</p></article>
+        <article><h3>Model and policy authority</h3><p>SHAP and approved-policy retrieval supported asynchronous Bedrock explanations. Generated language did not set credit policy, change PD values or approve a loan.</p></article>
+      </div>
+    </section>
+    <section class="block section-rule two">
+      <div><p class="eyebrow">Operational decisions</p><h2>Make promotion reversible.</h2></div>
+      <div class="copy">
+        <p>We kept model, feature and dataset versions connected across SageMaker Pipelines, MLflow and the serving contract. CDR schema changes, late arrivals, missing consent and skew were reasons to quarantine or hold a release, not silently substitute features.</p>
+        <p>Rollout moved through the lender-approved personal-loan path in stages. Risk and Compliance owned policy approval; engineering owned feature correctness, model serving, monitoring and rollback compatibility. Historical simulations were not presented as observed approval lift or savings.</p>
+      </div>
+    </section>
+    <section class="block section-rule">
+      <p class="eyebrow">Ownership and confidentiality</p>
+      <h2>Engineering depth without naming the customer.</h2>
+      <p class="note">This was EPIC TECHNOLOGY client work, not a personal lending product. The lender's identity and borrower records remain confidential. The technical scope and figures above are from my project account and retain their stated evaluation and production boundaries.</p>
+      <div class="hero-actions"><a class="button primary" href={withBase('/resume')}>Résumé</a><a class="button ghost" href={withBase('/work/yhct')}>Clinical AI</a><a class="button ghost" href={'mailto:' + profile.email}>Contact</a></div>
+    </section>
+  </article>
+</BaseLayout>
+<style>
+  .case { padding: 45px 0 88px; }
+  .back-link { display: inline-block; color: var(--muted); margin-bottom: 50px; }
+  header { max-width: 1000px; padding-bottom: 70px; }
+  h1 { font-size: clamp(3rem, 6.5vw, 6rem); line-height: 1.04; letter-spacing: -.055em; max-width: 16ch; margin: 18px 0 28px; }
+  .lede { font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.65; max-width: 840px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 35px; margin-top: 40px; }
+  .facts div { display: grid; gap: 7px; }
+  .facts span { color: var(--muted); text-transform: uppercase; font-size: .75rem; letter-spacing: .09em; }
+  .facts strong { font-size: .95rem; }
+  .block { padding: 70px 0; }
+  .block h2 { font-size: clamp(2rem, 4vw, 3.3rem); letter-spacing: -.04em; line-height: 1.1; max-width: 19ch; margin: 15px 0 25px; }
+  .two { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(25px, 7vw, 90px); }
+  .copy p, .note { color: var(--muted); line-height: 1.75; font-size: 1.08rem; margin: 0 0 18px; }
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+  .cards article { padding: 24px; border: 1px solid var(--line); border-radius: 12px; }
+  .cards h3 { font-size: 1.12rem; margin: 0 0 10px; }
+  .cards p { color: var(--muted); line-height: 1.7; margin: 0; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+  @media (max-width: 760px) { .two, .cards { grid-template-columns: 1fr; } .block { padding: 50px 0; } }
+</style>
