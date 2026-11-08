@@ -3,7 +3,7 @@ export const profile = {
   title: 'Senior AI Engineer · Applied AI Systems',
   eyebrow: 'AI Systems · Computer Vision · Quantitative ML · Research',
   intro:
-    'I lead AI engineering at EPIC TECHNOLOGY and still work directly on architecture and code. Recent work includes credit-risk ML on AWS, clinical AI for hospital physicians, production video intelligence and factory-floor inspection. Before EPIC, I built core enterprise-agent orchestration at FPT Software; my research and independent quant work inform how I evaluate models and build reliable systems.',
+    'I lead AI engineering at EPIC TECHNOLOGY, manage five direct reports and remain hands-on with architecture and implementation. I have built consumer-lending credit-risk ML on AWS, hospital clinical AI, production multi-camera video, single-line manufacturing inspection and an internal meeting assistant for international sales and technical presales. Previously I built the core LangGraph orchestration at FPT Software; research and independent quant work continue to shape how I validate systems.',
   email: 'tqsang97@gmail.com',
   github: 'https://github.com/sangtrx',
   linkedin: 'https://linkedin.com/in/tqsang',
@@ -53,7 +53,8 @@ export const capabilityDomains = [
       'I build the orchestration, data contracts, APIs and safeguards that turn language models into working software.',
     evidence: [
       'Clinical decision support with governed knowledge, citations, deterministic application authority, and explicit human/production boundaries',
-      'Designed core LangGraph orchestration for a multi-tenant enterprise assistant: tenant-scoped retrieval, tools, state and failure handling',
+      'Designed and implemented core LangGraph orchestration for a multi-tenant enterprise assistant: tenant-scoped retrieval, tools, state and failure handling',
+      'Built an internal sales/presales meeting assistant with live speech context, project-document retrieval, answer suggestions and structured follow-up material',
       'Multilingual speech and real-time interaction across API, worker, and browser-facing paths',
     ],
     stack: 'Python · FastAPI · LangGraph/LangChain · Azure OpenAI · Qdrant/Milvus/pgvector · PostgreSQL · Playwright · Celery/RabbitMQ/Redis',
@@ -159,8 +160,23 @@ export const projects = [
     accent: 'blue',
   },
   {
-    slug: 'enterprise-agents',
+    slug: 'internal-ai-meeting',
     index: '05',
+    title: 'Internal AI Meeting Tool',
+    kicker: 'EPIC TECHNOLOGY · International Sales & Technical Presales',
+    summary:
+      'Built a desktop meeting assistant for international product and technical conversations, combining live speech context, project-document retrieval, user-triggered answer suggestions, sales notes and follow-up drafts. The workflow helps colleagues without deep product expertise handle technical customer questions.',
+    role: 'Head of AI · Hands-on Builder · EPIC TECHNOLOGY',
+    year: '2025 - Present',
+    status: 'EPIC internal use · implemented sales and meeting workflows',
+    proof: ['Live speech and relevant sources', 'User-controlled answers', 'Structured sales follow-ups'],
+    tags: ['Sales Enablement', 'Speech AI', 'RAG', 'Electron', 'TypeScript'],
+    href: '/work/internal-ai-meeting',
+    accent: 'blue',
+  },
+  {
+    slug: 'enterprise-agents',
+    index: '06',
     title: 'Enterprise Conversational AI',
     kicker: 'FPT Software · Team-built agent systems',
     summary:
@@ -175,7 +191,7 @@ export const projects = [
   },
   {
     slug: 'interview-voice',
-    index: '06',
+    index: '07',
     title: 'Interview & Voice AI Systems',
     kicker: 'FPT Software · Conversation, speech & evaluation',
     summary:
@@ -238,10 +254,11 @@ export const systemPortfolio = [
   {
     period: '2025 — Present',
     title: 'Internal AI Meeting Tool',
-    owner: 'EPIC TECHNOLOGY · AI Systems Engineering',
+    owner: 'EPIC TECHNOLOGY · Head of AI / Hands-on Builder',
     summary:
-      'Built and deployed an internally accepted meeting assistant with live speech, multi-turn conversation state and project-aware retrieval; addressed stale context and cross-project contamination.',
-    signal: 'Internal deployment · speech / RAG',
+      'Built for international product sales and technical presales: live microphone/system-audio context, selected product-reference retrieval, role-aware answer suggestions, structured discovery notes, CRM-ready summaries and customer follow-up drafts. Designed to support colleagues without deep technical expertise.',
+    signal: 'Internal sales enablement · speech / RAG',
+    href: '/work/internal-ai-meeting',
   },
   {
     period: '2024 — 2025',
@@ -286,12 +303,13 @@ export const experience = [
     role: 'Head of Artificial Intelligence',
     company: 'EPIC TECHNOLOGY',
     summary:
-      'Hands-on Head of AI leading architecture and implementation across production credit-risk ML, hospital clinical AI, video intelligence, manufacturing inspection and education AI.',
+      'Hands-on Head of AI leading five direct reports and building systems across credit-risk ML, hospital clinical AI, production video, manufacturing inspection, education AI and sales/presales assistance.',
     details: [
       'Led point-in-time Open Banking/CDR and Spark/Iceberg features, XGBoost/LightGBM risk challengers and SageMaker scoring for an Australian lender; corrected leakage and offline/online skew before rollout.',
       'Designed and deployed hospital clinical AI with deterministic prescription rules, Qdrant retrieval and grounded physician answers.',
-      'Built production video intelligence, edge YOLO inspection on a manufacturing line, teacher-reviewed Open edX AI and an internal AI meeting tool.',
-      'Led cross-functional delivery while staying hands-on across backend, AI models, evaluation, deployment and recovery.',
+      'Implemented the core software for production multi-camera video intelligence and deployed YOLO inspection on one manufacturing line; built teacher-reviewed Open edX AI.',
+      'Built the Internal AI Meeting Tool for international sales and technical presales, combining live speech, project-grounded answers, CRM-ready call notes and prospect follow-up drafts.',
+      'Led a five-person engineering/QA reporting team while remaining hands-on across backend, AI models, evaluation, deployment and recovery.',
     ],
   },
   {
