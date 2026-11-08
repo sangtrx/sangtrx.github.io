@@ -35,6 +35,7 @@ Canonical human-readable HTML pages are the authoritative public content. The po
 - [Credit-risk ML case study](${url('/work/credit-risk')}) — anonymized EPIC Open Banking/Spark/Iceberg/SageMaker platform, leakage/skew investigations and lender-governed rollout.
 - [Curren case study](${url('/work/curren')}) — deliberately abstracted quantitative research/runtime/public-verification boundary.
 - [Production video intelligence](${url('/work/epic-video')}) — EPIC physical-world AI, media qualification, temporal events, evidence, and bounded recovery.
+- [Internal AI Meeting Tool](${url('/work/internal-ai-meeting')}) — EPIC meeting and sales-assistance workflow with live speech, document-grounded responses, CRM-ready notes and follow-up drafts.
 - [Enterprise conversational AI](${url('/work/enterprise-agents')}) — FPT team system and personal prompt/graph/tool contributions.
 - [Interview and voice AI](${url('/work/interview-voice')}) — separate FPT speech-enabled interview and asynchronous conversation workflows.
 
@@ -43,7 +44,7 @@ Canonical human-readable HTML pages are the authoritative public content. The po
 - Hospital Clinical AI & Decision Support — EPIC TECHNOLOGY.
 - Production Multi-Camera Video Intelligence — EPIC TECHNOLOGY.
 - Manufacturing Fastener Visual Inspection — EPIC TECHNOLOGY; deployed on one Japanese customer production line.
-- Internal AI Meeting Tool — EPIC TECHNOLOGY; internally accepted speech/retrieval assistant.
+- Internal AI Meeting Tool — EPIC TECHNOLOGY; built for international sales and technical presales, with live speech context, selected reference retrieval, user-triggered answer assistance and customer follow-up material. Internal acceptance is owner-reported; no claimed sales conversion metrics or CRM API integration.
 - AI-Powered Open edX Platform — EPIC TECHNOLOGY.
 - AI4U Enterprise Conversational Agent — FPT Software; designed and implemented core LangGraph orchestration, including tenant-aware retrieval, tools and failure handling.
 - Interview and Voice AI workflows — separate FPT Software team project family; no unverified speech metrics or full-stack personal ownership.
