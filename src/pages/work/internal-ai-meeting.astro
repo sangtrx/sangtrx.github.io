@@ -11,7 +11,7 @@ const jsonLd = [
   websiteSchema(root),
   {
     '@type': 'CreativeWork',
-    '@id': \`\${canonical}#case-study\`,
+    '@id': `${canonical}#case-study`,
     url: canonical,
     name: 'Internal AI Meeting Tool | Sang Truong',
     description: 'An EPIC TECHNOLOGY internal meeting assistant for international product sales and technical presales, covering speech context, grounded answers, sales notes and customer follow-up.',
@@ -88,7 +88,7 @@ const decisions = [
         <a class="button primary" href={withBase('/work/enterprise-agents')}>Enterprise agent orchestration</a>
         <a class="button ghost" href={withBase('/work/yhct')}>Clinical decision support</a>
         <a class="button ghost" href={withBase('/resume')}>Full résumé</a>
-        <a class="button ghost" href={\`mailto:\${profile.email}\`}>Contact</a>
+        <a class="button ghost" href={`mailto:${profile.email}`}>Contact</a>
       </div>
     </section>
   </article>
