@@ -21,6 +21,7 @@ The site is deliberately **high-signal and low-disclosure**. Public pages show s
 - **Credit Risk ML & Decision Infrastructure** — an anonymized EPIC TECHNOLOGY project for an Australian lender, covering point-in-time Open Banking features, leakage and training/serving skew, SageMaker inference and a risk-governed production rollout.
 - **Curren** — an independent quantitative research and systems project, presented around point-in-time evidence, research/evaluation discipline, guarded runtime state, and a sanitized public verification boundary. No guaranteed or validated profitable alpha is claimed.
 - **Production Multi-Camera Video Intelligence** — EPIC TECHNOLOGY; client-safe treatment of heterogeneous media, source identity, temporal events, evidence and recovery, not proprietary topology or invented KPIs.
+- **Internal AI Meeting Tool** — EPIC TECHNOLOGY; built for international product sales and technical presales, with live speech context, document-grounded responses, CRM-ready notes and customer follow-up drafts. Internal use is owner-reported, not a claim of company-wide deployment or sales performance.
 - **Enterprise Conversational AI** — FPT Software; personally designed and implemented core LangGraph orchestration while surrounding platform/AKS delivery was team-owned.
 - **Interview & Voice AI Systems** — a separate FPT Software project family spanning browser speech interaction, interview APIs, async conversation/evaluation and bounded ownership.
 
