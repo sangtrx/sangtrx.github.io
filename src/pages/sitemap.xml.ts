@@ -4,14 +4,15 @@ import { withBase } from '../lib/paths';
 export const prerender = true;
 
 const routes = [
-  { path: '/', lastmod: '2026-11-04' },
-  { path: '/about', lastmod: '2026-11-04' },
-  { path: '/resume', lastmod: '2026-11-04' },
+  { path: '/', lastmod: '2026-11-09' },
+  { path: '/about', lastmod: '2026-11-09' },
+  { path: '/resume', lastmod: '2026-11-09' },
   { path: '/yhct', lastmod: '2026-09-11' },
   { path: '/work/yhct', lastmod: '2026-09-11' },
   { path: '/work/credit-risk', lastmod: '2026-11-04' },
   { path: '/work/curren', lastmod: '2026-09-10' },
-  { path: '/work/epic-video', lastmod: '2026-10-12' },
+  { path: '/work/epic-video', lastmod: '2026-11-09' },
+  { path: '/work/internal-ai-meeting', lastmod: '2026-11-09' },
   { path: '/work/enterprise-agents', lastmod: '2026-10-12' },
   { path: '/work/interview-voice', lastmod: '2026-10-12' },
 ];
